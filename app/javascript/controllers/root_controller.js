@@ -8,7 +8,7 @@ export default class extends Controller {
     this.userSettingsModalOpen = false
 
     // this.filterIndex =
-    this.listItemIndex =
+    this.listItemIndex = -1
     this.paletteItemIndex = 0
 
     // this.highlightFilter()

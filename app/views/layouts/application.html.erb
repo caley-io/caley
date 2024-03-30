@@ -31,12 +31,10 @@
   </head>
 
   <body>
-    <div data-controller="root" class="min-h-screen text-white bg-primary">
+    <div data-controller="root" class="w-screen min-h-screen px-1 text-white bg-black">
       <!-- TODO: Remove menu controller -->
       <div data-controller="menu">
         <%= render 'shared/command_palette' %>
-        <%# render 'shared/navigation/floating_menu' %>
-        <%= render 'shared/modals/settings' %>
       </div>
 
       <%= yield %>

@@ -1,120 +1,16 @@
-<div class="flex h-screen divide-x divide-neutral-700/40 overflow-hidden">
-  <div class="flex-grow overflow-y-scroll">
-    <div class="fixed w-full">
-      <%= render 'shared/navbar' %>
-      <%= render 'shared/toolbar' %>
+<div class="flex flex-col w-full h-screen pb-1">
+  <% @email_server %>
+  <nav class="flex items-center gap-x-1 w-full h-9 py-1">
+    <div class="flex items-center h-7 px-4 py-0.5 text-sm font-light bg-neutral-800/50 rounded-sm">Inbox</div>
+  </nav>
+  <div class="w-full flex-grow bg-neutral-800/40 border border-neutral-800/50 rounded-sm">
+    <div class="flex items-center justfy-between h-10 px-6 border-b border-neutral-800/50">
+      <div><p class="text-sm font-light">Filter</p></div>
     </div>
-
-    <div class="overflow-y-scroll pt-[84px]">
-      <% if @email_threads.any? %>
-        <%= render partial: "email_list", locals: { threads: @email_threads } %>
-      <% else %>
-        <div class="flex flex-col items-center justify-center h-full">
-          <p class="text-lg">Nothing to see here 👀</p>
-          <p class="text-neutral-400">We'll let you know when you have an email to worry about</p>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="hidden flex flex-col lg:w-[400px] h-screen overflow-hidden">
-    <div class="flex items-center justify-between h-[44px] pl-4 pr-2 border-b border-neutral-700/40">
+    <div class="flex justify-between h-10 px-6 border-b border-neutral-800/20">
       <div class="flex items-center gap-x-1.5">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 4.75C15 7.51142 13.5114 10 10.75 10C13.5114 10 15 12.4886 15 15.25C15 12.4886 16.4886 10 19.25 10C16.4886 10 15 7.51142 15 4.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M8 12.75C8 14.4069 6.40685 16 4.75 16C6.40685 16 8 17.5931 8 19.25C8 17.5931 9.59315 16 11.25 16C9.59315 16 8 14.4069 8 12.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-        <p class="text-xs">Preview</p>
-      </div>
-      <div class="flex items-center justify-center w-7 h-7 text-neutral-400 hover:text-white hover:bg-neutral-700 rounded-lg rotate-180">
-        <%= render 'shared/icons/preview_toggle' %>
-      </div>
-    </div>
-    <div class="flex items-center h-[44px] px-4 border-b border-neutral-700/40">
-      <div class="flex items-center gap-x-1.5">
-        <div class="flex items-center justify-center w-5 h-5 rounded-md bg-red-200 text-red-800 text-xs">S</div>
-        <p class="text-xs">Suzan Corkery</p>
-      </div>
-    </div>
-    <div class="flex-grow">
-      <div class="flex flex-col h-full">
-        <div class="space-y-2 p-4 border-b border-neutral-700/40">
-          <div>
-            <p class="text-xs font-medium">Email summary</p>
-          </div>
-          <div>
-            <p class="text-sm">Susan is excited to try Caley. She needs to know how large of a team Caley can support, and the best way to quickly create an account. She's also interested in discussing discounts for large teams.</p>
-          </div>
-        </div>
-        <div class="space-y-2 p-4 overflow-y-scroll">
-          <div>
-            <p class="text-xs font-medium">Todo</p>
-          </div>
-          <div class="space-y-1">
-            <div class="flex items-top gap-x-1.5">
-              <div class="text-neutral-400 hover:text-white">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 12C4.75 7.99594 7.99594 4.75 12 4.75V4.75C16.0041 4.75 19.25 7.99594 19.25 12V12C19.25 16.0041 16.0041 19.25 12 19.25V19.25C7.99594 19.25 4.75 16.0041 4.75 12V12Z"></path>
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 12.75L10.1837 13.6744C10.5275 14.407 11.5536 14.4492 11.9564 13.7473L14.25 9.75"></path>
-                </svg>
-              </div>
-              <p class="text-sm">Let susan know what Caley's team size limit is.</p>
-            </div>
-            <div class="flex items-top gap-x-1.5">
-              <div class="text-neutral-400 hover:text-white">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 12C4.75 7.99594 7.99594 4.75 12 4.75V4.75C16.0041 4.75 19.25 7.99594 19.25 12V12C19.25 16.0041 16.0041 19.25 12 19.25V19.25C7.99594 19.25 4.75 16.0041 4.75 12V12Z"></path>
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 12.75L10.1837 13.6744C10.5275 14.407 11.5536 14.4492 11.9564 13.7473L14.25 9.75"></path>
-                </svg>
-              </div>
-              <p class="text-sm">Provide rate info per user.</p>
-            </div>
-            <div class="flex items-top gap-x-1.5">
-              <div class="text-neutral-400 hover:text-white">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 12C4.75 7.99594 7.99594 4.75 12 4.75V4.75C16.0041 4.75 19.25 7.99594 19.25 12V12C19.25 16.0041 16.0041 19.25 12 19.25V19.25C7.99594 19.25 4.75 16.0041 4.75 12V12Z"></path>
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 12.75L10.1837 13.6744C10.5275 14.407 11.5536 14.4492 11.9564 13.7473L14.25 9.75"></path>
-                </svg>
-              </div>
-              <p class="text-sm">Send susan the sign up link.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flex-grow"></div>
-        <div class="space-y-2 p-4 border-t border-neutral-700/40">
-          <div>
-            <p class="text-xs font-medium">Common actions</p>
-          </div>
-          <div class="space-y-1.5">
-            <div class="flex items-center gap-x-1.5">
-              <div class="flex items-center justify-center w-5 h-5 text-xs rounded-md bg-neutral-700">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75V12a2 2 0 0 1-2 2h-8.5m0 0 3.5-3.25M6.75 14l3.5 3.25"></path>
-                </svg>
-              </div>
-              <p class="text-sm text-neutral-400">View</p>
-            </div>
-            <div class="flex items-center gap-x-1.5">
-              <div class="flex items-center justify-center w-5 h-5 text-xs rounded-md bg-neutral-700">r</div>
-              <p class="text-sm text-neutral-400">Reply</p>
-            </div>
-            <div class="flex items-center gap-x-1.5">
-              <div class="flex items-center justify-center w-5 h-5 text-xs rounded-md bg-neutral-700">m</div>
-              <p class="text-sm text-neutral-400">Mark as read</p>
-            </div>
-            <div class="flex items-center gap-x-1.5">
-              <div class="flex items-center justify-center w-5 h-5 text-xs rounded-md bg-neutral-700">l</div>
-              <p class="text-sm text-neutral-400">Reply later</p>
-            </div>
-            <div class="flex items-center gap-x-1.5">
-              <div class="flex items-center justify-center w-5 h-5 text-xs rounded-md bg-neutral-700">d</div>
-              <p class="text-sm text-neutral-400">Delete</p>
-            </div>
-            <div class="flex items-center gap-x-1.5">
-              <div class="flex items-center justify-center w-5 h-5 text-xs rounded-md bg-neutral-700">/</div>
-              <p class="text-sm text-neutral-400">Search</p>
-            </div>
-          </div>
-        </div>
+        <div class="flex items-center justify-center w-5 h-5 text-xs font-light text-black rounded-full bg-indigo-200">Au</div>
+        <p class="text-xs">Austin Wasson</p>
       </div>
     </div>
   </div>

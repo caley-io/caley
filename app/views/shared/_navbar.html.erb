@@ -1,29 +1,29 @@
-<nav class="flex items-center justify-between w-full h-10 bg-secondary">
+<nav class="flex items-center justify-between w-full h-[44px] bg-base border-b border-borderPrimary">
   <div class="flex-grow flex items-center">
     <div data-controller="user-dropdown">
-      <div class="flex items-center justify-center h-10 px-1 border-b border-neutral-800/70">
+      <div class="flex items-center justify-center h-9 px-1">
         <div data-action="click->user-dropdown#toggleDropdown"
-            class="flex items-center justify-center w-8 h-8 text-neutral-400 hover:text-white rounded-lg hover:bg-highlight cursor-pointer">
+            class="flex items-center justify-center w-7 h-7 text-neutral-400 hover:text-white rounded-lg hover:bg-highlight cursor-pointer">
           <%= render 'medium_profile_placeholder', color: current_user.profile_color.to_sym, name: current_user.first_name.first %>
         </div>
         <%= render 'shared/navigation/user' %>
       </div>
     </div>
-    <div class="flex items-center gap-x-1 h-10 px-4 bg-secondary border-x border-neutral-800/50">
+    <div class="flex items-center gap-x-1 h-9 px-4 bg-base border-x border-neutral-800/50">
       <div data-root-target="filter"
           class="flex items-center">
         <p class="text-xs font-medium">Inbox<span class="ml-3 text-amber-500"><%= @email_threads.count %></span></p>
       </div>
     </div>
-    <div class="flex items-center gap-x-1 h-10 px-4 border-b border-r border-neutral-800/50 hover:bg-highlight">
+    <!-- <div class="flex items-center gap-x-1 h-9 px-4 border-b border-r border-neutral-800/50 hover:bg-highlight">
       <div data-root-target="filter"
           class="flex items-center">
         <p class="text-xs font-medium">Reply later<span class="ml-3 text-neutral-500">3</span></p>
       </div>
-    </div>
-    <div class="flex-grow h-10 border-b border-neutral-800/70">
+    </div> -->
+    <div class="flex-grow h-9 border-b border-neutral-800/70">
   </div>
-  <div class="flex items-center justify-center h-10 px-1 border-b border-neutral-800/70">
+  <div class="flex items-center justify-center h-9 px-1 border-b border-neutral-800/70">
     <div class="flex items-center justify-center w-7 h-7 text-neutral-400 hover:text-white hover:bg-highlight rounded-lg rotate-180">
       <%= render 'shared/icons/preview_toggle' %>
     </div>

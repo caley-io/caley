@@ -57,3 +57,5 @@ group :test do
 end
 
 gem "foreman", "~> 0.87.2"
+
+gem "solargraph", "~> 0.50.0"
