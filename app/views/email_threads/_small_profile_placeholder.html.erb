@@ -1,0 +1,18 @@
+<% case color %>
+  <% when :blue %>
+    <div class="flex items-center justify-center w-[18px] h-[18px] bg-sky-200 rounded-full">
+      <p class="text-xs font-medium text-sky-800"><%= name %></p>
+    </div>
+  <% when :green %>
+    <div class="flex items-center justify-center w-[18px] h-[18px] bg-emerald-200 rounded-full">
+      <p class="text-xs  text-emerald-800"><%= name %></p>
+    </div>
+  <% when :red %>
+    <div class="flex items-center justify-center w-[18px] h-[18px] bg-red-200 rounded-full">
+      <p class="text-xs font-medium text-red-800"><%= name %></p>
+    </div>
+  <% else %>
+    <div class="flex items-center justify-center w-[18px] h-[18px] bg-amber-200 rounded-full">
+      <p class="text-xs font-medium text-red-800"><%= name %></p>
+    </div>
+<% end %>

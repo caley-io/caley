@@ -1,0 +1,23 @@
+include:
+  - "**/*.rb"
+  - "**/*.erb"
+exclude:
+  - spec/**/*
+  - test/**/*
+  - vendor/**/*
+  - ".bundle/**/*"
+domains:
+  - ruby
+  - rails
+  - erb
+require_paths:
+  - "."
+plugins: []
+reporters:
+  - rubocop
+  - require_not_found
+check_for_completion: true
+complete_builtin_methods: true
+
+max_files: 5000
+

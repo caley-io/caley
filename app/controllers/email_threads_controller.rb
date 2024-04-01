@@ -2,7 +2,7 @@ class EmailThreadsController < ApplicationController
   layout "email_thread", only: [ :new, :show ]
 
   before_action :authenticate_user!
-  # before_action :initialize_filters
+  before_action :initialize_filters
 
   # TODO: Add filter for inbox, reply later, all
   def inbox
@@ -21,7 +21,7 @@ class EmailThreadsController < ApplicationController
 
   # private
 
-  # def initialize_filters
-  #   @filters = [ "Inbox", "Reply later", "All" ]
-  # end
+  def initialize_filters
+    @filters = [ "Inbox", "Reply later", "All" ]
+  end
 end

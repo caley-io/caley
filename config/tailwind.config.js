@@ -11,12 +11,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        base: '#0E0F0F',
-        primary: '#161618',
+        base: '#262626',
+        primary: '#404040',
         secondary: '#141414',
-        highlight: '#1B1B1D',
+        highlight: '#303030',
         modal: '#161618',
-        borderPrimary: '#212121'
+        borderPrimary: '#303030',
+        borderSecondary: '#424242',
       },
       backdropFilter: {
         'none': 'none',

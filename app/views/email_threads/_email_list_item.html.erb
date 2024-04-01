@@ -1,21 +1,18 @@
-<!-- TODO: Clean this up w/ custom CSS instead of Tailwind (for keyboard nav) -->
-<!-- TODO: Replace border-b with a divider -->
-<div data-root-target="listItem"
-    aria-selected="false"
-    class="group flex items-center justify-between h-[44px] px-2 aria-selected:bg-highlight hover:bg-highlight border-b border-borderPrimary">
-  <div class="flex items-center gap-x-2 truncate text-[13px]">
-    <!-- TODO: Add checkbox -->
-    <!-- <input type="checkbox" class="rounded bg-neutral-700 border border-neutral-600 opacity-0 group-hover:opacity-100"> -->
+<tr data-root-target="listItem" aria-selected="false" class="flex items-center gap-x-2.5 w-full h-[44px] px-6 border-b border-neutral-800/40 hover:bg-neutral-800/40 aria-selected:bg-neutral-800/40">
+  <td>
+    <%= render 'medium_profile_placeholder', color: [ "amber", "blue", "green", "purple", "red" ].sample.to_sym, name: message.sender_name.first %>
+  </td>
+  <td class="w-24 truncate">
+    <p class="text-xs"><%= message.sender_name %></p>
+  </td>
+  <td>
+    <p class="text-xs text-neutral-400"><%= message.subject %></p>
+  </td>
+  <td class="flex-grow">
+    <p class="text-xs font-medium"><%= message.body %></p>
+  </td>
+  <td>
+    <p class="text-xs font-light text-neutral-400"><%= format_date(message.created_at) %></p> 
+  </td>
+</tr>
 
-    <!-- TODO: We'll eventually set a random enum color for the placeholder when a user is created -->
-    <%= render "medium_profile_placeholder", color: [ "amber", "blue", "green", "purple", "red" ].sample.to_sym, name: message.sender_name.first %>
-
-    <!-- TODO: Separate sender_name into first/last and truncate last -->
-    <p class="w-40 text-slate-200"><%= message.sender_name %></p>
-    <p class="text-neutral-500 truncate"><%= message.subject.presence || "No Subject" %></p>
-    <p class="truncate"><%= message.body %></p>
-  </div>
-  <div class="flex justify-end ml-2.5">
-    <p class="truncate text-xs font-medium text-neutral-500 aria-selected:text-white"><%= format_date(message.created_at) %></p>
-  </div>
-</div>
