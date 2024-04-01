@@ -22,7 +22,7 @@
       </button>
     </div>
   </nav>
-  <div class="w-full flex-grow bg-neutral-800/40 border border-neutral-800/50 rounded-md">
+  <div class="w-full flex-grow bg-neutral-800/40 border border-neutral-800/50 rounded-md overflow-y-scroll">
     <div class="flex items-center justfy-between h-10 px-6 border-b border-neutral-800/50">
       <!-- <div><p class="text-sm font-light">Filter</p></div> -->
     </div>
@@ -35,60 +35,13 @@
       <!-- </div> -->
       <p class="text-xs">Emails <span class="text-neutral-400">3</span></p>
     </div>
-    <table class="w-full">
-      <tbody>
-        <tr data-root-target="listItem" aria-selected="false" class="flex items-center gap-x-2.5 w-full h-[44px] px-6 border-b border-neutral-800/40 hover:bg-neutral-800/40 aria-selected:bg-neutral-800/40">
-          <td>
-            <%= render 'medium_profile_placeholder', color: :amber, name: "A"%>
-          </td>
-          <td class="w-24 truncate">
-            <p class="text-xs">Austin Wasson</p>
-          </td>
-          <td>
-            <p class="text-xs text-neutral-400">Reminder: Set meeting</p>
-          </td>
-          <td class="flex-grow">
-            <p class="text-xs font-medium">Example email summary that is summarized by our AI</p>
-          </td>
-          <td>
-            <p class="text-xs font-light text-neutral-400">Apr 1</p> 
-          </td>
-        </tr>
-        <tr data-root-target="listItem" aria-selected="false" class="flex items-center gap-x-2.5 w-full h-[44px] px-6 border-b border-neutral-800/40 hover:bg-neutral-800/40 aria-selected:bg-neutral-800/40">
-          <td>
-            <%= render 'medium_profile_placeholder', color: :amber, name: "T"%>
-          </td>
-          <td class="w-24 truncate">
-            <p class="text-xs">TJ Barber</p>
-          </td>
-          <td>
-            <p class="text-xs text-neutral-400">Email Threads</p>
-          </td>
-          <td class="flex-grow">
-            <p class="text-xs font-medium">Example email summary that is summarized by our AI</p>
-          </td>
-          <td>
-            <p class="text-xs font-light text-neutral-400">Apr 1</p> 
-          </td>
-        </tr>
-        <tr data-root-target="listItem" aria-selected="false" class="flex items-center gap-x-2.5 w-full h-[44px] px-6 border-b border-neutral-800/40 hover:bg-neutral-800/40 aria-selected:bg-neutral-800/40">
-          <td>
-            <%= render 'medium_profile_placeholder', color: :amber, name: "J"%>
-          </td>
-          <td class="w-24 truncate">
-            <p class="text-xs">Jeremy Scatigna</p>
-          </td>
-          <td>
-            <p class="text-xs text-neutral-400">iOS Design Meeting</p>
-          </td>
-          <td class="flex-grow">
-            <p class="text-xs font-medium">Hey, I'm going to set a meeting later today to talk through the mobile app design.</p>
-          </td>
-          <td>
-            <p class="text-xs font-light text-neutral-400">Apr 1</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <% if @email_threads.any? %>
+      <%= render partial: "email_list", locals: { threads: @email_threads } %>
+    <% else %>
+      <div class="flex flex-col items-center justify-center h-full">
+        <p class="text-lg">Nothing to see here 👀</p>
+        <p class="text-neutral-400">We'll let you know when you have an email to worry about</p>
+      </div>
+    <% end %>
   </div>
 </div>

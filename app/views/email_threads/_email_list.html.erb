@@ -1,7 +1,10 @@
-<div>
-  <% threads.reverse.each do |thread| %>
-    <%= link_to email_thread_path(thread.id), onmouseover: "event.preventDefault();" do %>
-      <%= render "email_list_item", message: thread.messages.last %>
+<table class="w-full">
+  <tbody>
+    <% threads.reverse.each do |thread| %>
+      <%# link_to email_thread_path(thread.id), onmouseover: "event.preventDefault();" do %>
+        <%= render "email_list_item", message: thread.messages.last %>
+      <%# end %>
     <% end %>
-  <% end %>
-</div>
+  </tbody>
+</table>
+
