@@ -136,7 +136,7 @@ GEM
     drb (2.2.1)
     e2mmap (0.1.0)
     erubi (1.12.0)
-    faker (3.2.3)
+    faker (3.3.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     foreman (0.87.2)
