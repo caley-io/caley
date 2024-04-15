@@ -139,7 +139,7 @@ GEM
     faker (3.2.3)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
-    foreman (0.87.2)
+    foreman (0.88.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     highline (3.0.1)
@@ -440,7 +440,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
-  foreman (~> 0.87.2)
+  foreman (~> 0.88.1)
   hotwire-livereload
   i18n-tasks
   importmap-rails

@@ -56,6 +56,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "foreman", "~> 0.87.2"
+gem "foreman", "~> 0.88.1"
 
 gem "solargraph", "~> 0.50.0"
